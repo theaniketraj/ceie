@@ -1,6 +1,6 @@
 # **CEIE (Controlled Environment Integration Engine)**
 
-Welcome to **CEIE** – a comprehensive toolchain designed to automate Git repository setup, streamline branch management, and enhance your development workflow. With CEIE, you can easily set up repositories, automate deployment processes, and manage environments using GitHub Actions, all in a scalable, efficient, and reusable package.
+Welcome to **CEIE 2.0** – a comprehensive toolchain designed to automate Git repository setup, streamline branch management, and enhance your development workflow. With CEIE, you can easily set up repositories, automate deployment processes, and manage environments using GitHub Actions, all in a scalable, efficient, and reusable package.
 
 ---
 
@@ -58,3 +58,25 @@ To install `ceie` globally, run the following command in your terminal:
 
 ```bash
 npx ceie
+```
+
+This will automatically install and configure CEIE in your project.
+
+## **Usage**
+
+Once you've installed CEIE, you can set up and manage your Git repositories using the `git setup-ceie` command.
+
+Step 1: Setup CEIE
+
+To initialize your project repository with CEIE, simply run:
+
+```bash
+git setup-ceie
+```
+
+This will create the three default branches in your repository and configure the environment automatically.
+
+Step 2: Automate CI/CD
+
+CEIE also integrates GitHub Actions for CI/CD pipelines. After setting up CEIE, the workflows will be automatically added to your Github repository.
+
