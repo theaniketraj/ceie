@@ -62,6 +62,8 @@ npx ceie
 
 This will automatically install and configure CEIE in your project.
 
+---
+
 ## **Usage**
 
 Once you've installed CEIE, you can set up and manage your Git repositories using the `git setup-ceie` command.
@@ -79,4 +81,75 @@ This will create the three default branches in your repository and configure the
 Step 2: Automate CI/CD
 
 CEIE also integrates GitHub Actions for CI/CD pipelines. After setting up CEIE, the workflows will be automatically added to your Github repository.
+
+---
+
+## **Getting Started**
+
+1. Clone the repository into your local machine.
+
+```bash
+git clone https://github.com/theaniketraj/ceie.git
+cd ceie
+```
+
+2. Install dependencies and build the project.
+
+```bash
+npm install
+```
+
+3. Use the `git setup-ceie` command to set up the repository structure.
+
+---
+
+## **Project Structure**
+
+```bash
+CEIE/ 
+├── src/ # Source code for CEIE tools and functionality 
+├── workflows/ # GitHub Actions workflows 
+│   ├── main.yml # Main CI/CD pipeline 
+│   ├── controlled.yml # CI pipeline for Controlled Environment branch 
+│   └── isolated.yml # CI pipeline for Isolated Environment branch 
+├── scripts/ # Reusable scripts for setting up repositories and environments 
+├── docs/ # Documentation files and roadmap 
+├── README.md # Project README 
+└── LICENSE # License information
+```
+
+---
+
+## **CI/CD Integration**
+
+CEIE comes with pre-configured GitHub Actions workflows for seamless CI/CD integration.
+
+1. Main Workflow: Automatically deploy code when changes are merged into the Main branch.
+2. Controlled Workflow: Build and test code before merging into Main.
+3. Isolated Workflow: Isolated environment workflow for individual development work.
+
+For more information on GitHub Actions, check out the documentation on [GitHub Actions](https://docs.github.com/en/actions).
+
+---
+
+## **Contributing**
+
+We welcome contributions to improve CEIE. If you have suggestions, bug fixes, or feature requests, feel free to fork the repository and submit a pull request.
+
+1. Steps to Contribute
+2. Fork the repository.
+3. Create a new branch for your changes.
+4. Make your changes and commit them.
+5. Push your changes to your fork.
+6. Create a pull request describing your changes.
+
+---
+
+## **License**
+
+CEIE is open-source software licensed under the MIT License. See [LICENSE]() for more details.
+
+---
+
+We hope CEIE helps streamline your workflow and boosts productivity. Feel free to explore, contribute, and reach out with any questions or suggestions. Happy pipelining. 😉
 
