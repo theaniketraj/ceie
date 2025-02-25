@@ -136,12 +136,13 @@ For more information on GitHub Actions, check out the documentation on [GitHub A
 
 We welcome contributions to improve CEIE. If you have suggestions, bug fixes, or feature requests, feel free to fork the repository and submit a pull request.
 
-1. Steps to Contribute
-2. Fork the repository.
-3. Create a new branch for your changes.
-4. Make your changes and commit them.
-5. Push your changes to your fork.
-6. Create a pull request describing your changes.
+Steps to Contribute:
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Create a pull request describing your changes.
 
 ---
 
