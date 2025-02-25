@@ -1,0 +1,32 @@
+{
+  "name": "ceie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "ceie": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git",
+    "automation",
+    "repository",
+    "setup",
+    "ceie"
+  ],
+  "author": "Aniket Raj",
+  "license": "MIT",
+  "description": "CEIE 2.0 - A fully automated repository setup tool for seamless Git workflow management.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theaniketraj/ceie"
+  },
+  "bugs": {
+    "url": "https://github.com/theaniketraj/ceie/issues"
+  },
+  "homepage": "https://github.com/theaniketraj/ceie#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
