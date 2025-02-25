@@ -147,7 +147,7 @@ We welcome contributions to improve CEIE. If you have suggestions, bug fixes, or
 
 ## **License**
 
-CEIE is open-source software licensed under the MIT License. See [LICENSE]() for more details.
+CEIE is open-source software licensed under the MIT License. See [LICENSE](https://github.com/theaniketraj/ceie?tab=MIT-1-ov-file) for more details.
 
 ---
 
