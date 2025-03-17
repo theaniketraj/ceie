@@ -4,6 +4,14 @@ const { execSync } = require("child_process");
 const readline = require("readline-sync");
 const https = require("https");
 const path = require("path");
+const packageJson = require("../package.json");
+const args = process.argv.slice(2);
+if (args.includes("--version")) {
+  console.log(`CEIE ${packageJson.version}`);
+  process.exit(0);
+}
+
+// Proceed with the actual setup process...
 
 // Helper function to create a GitHub repository via API
 function createGitHubRepo(repoName, token) {
@@ -13,27 +21,31 @@ function createGitHubRepo(repoName, token) {
       private: false,
     });
     const options = {
-      hostname: 'api.github.com',
+      hostname: "api.github.com",
       port: 443,
-      path: '/user/repos',
-      method: 'POST',
+      path: "/user/repos",
+      method: "POST",
       headers: {
-        'User-Agent': 'ceie-2.0',
-        'Authorization': `token ${token}`,
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(postData),
+        "User-Agent": "ceie-2.0",
+        Authorization: `token ${token}`,
+        "Content-Type": "application/json",
+        "Content-Length": Buffer.byteLength(postData),
       },
     };
 
     const req = https.request(options, (res) => {
       let data = "";
-      res.on("data", (chunk) => { data += chunk; });
+      res.on("data", (chunk) => {
+        data += chunk;
+      });
       res.on("end", () => {
         if (res.statusCode >= 200 && res.statusCode < 300) {
           const repoInfo = JSON.parse(data);
           resolve(repoInfo.clone_url);
         } else {
-          reject(new Error(`GitHub API returned status ${res.statusCode}: ${data}`));
+          reject(
+            new Error(`GitHub API returned status ${res.statusCode}: ${data}`)
+          );
         }
       });
     });
@@ -65,11 +77,18 @@ function createGitHubRepo(repoName, token) {
     // If remote doesn't exist, attempt auto-creation
     if (!remoteExists) {
       const folderName = path.basename(process.cwd());
-      console.log(`ℹ️ No remote origin found. Your repository will be named "${folderName}".`);
-      const autoCreate = readline.question("Do you want to auto-create a GitHub repository with this name? (Y/n): ");
+      console.log(
+        `ℹ️ No remote origin found. Your repository will be named "${folderName}".`
+      );
+      const autoCreate = readline.question(
+        "Do you want to auto-create a GitHub repository with this name? (Y/n): "
+      );
       let repoUrl = "";
       if (autoCreate.toLowerCase() === "y" || autoCreate === "") {
-        const token = readline.question("Enter your GitHub Personal Access Token: ", { hideEchoBack: true });
+        const token = readline.question(
+          "Enter your GitHub Personal Access Token: ",
+          { hideEchoBack: true }
+        );
         console.log("🔄 Creating repository on GitHub...");
         try {
           repoUrl = await createGitHubRepo(folderName, token);
@@ -77,11 +96,15 @@ function createGitHubRepo(repoName, token) {
           execSync(`git remote add origin ${repoUrl}`, { stdio: "inherit" });
         } catch (err) {
           console.error("❌ Failed to auto-create repository:", err.message);
-          repoUrl = readline.question("Please enter your GitHub repository URL manually: ");
+          repoUrl = readline.question(
+            "Please enter your GitHub repository URL manually: "
+          );
           execSync(`git remote add origin ${repoUrl}`, { stdio: "inherit" });
         }
       } else {
-        repoUrl = readline.question("Please enter your GitHub repository URL: ");
+        repoUrl = readline.question(
+          "Please enter your GitHub repository URL: "
+        );
         execSync(`git remote add origin ${repoUrl}`, { stdio: "inherit" });
       }
     }

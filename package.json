@@ -1,6 +1,6 @@
 {
   "name": "ceie",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "bin": {
     "ceie": "./index.js"
@@ -17,7 +17,7 @@
   ],
   "author": "Aniket Raj",
   "license": "MIT",
-  "description": "CEIE 2.0 - A fully automated repository setup tool for seamless Git workflow management.",
+  "description": "CEIE 2.0 - Controlled Environment Integration Engine",
   "repository": {
     "type": "git",
     "url": "https://github.com/theaniketraj/ceie"
