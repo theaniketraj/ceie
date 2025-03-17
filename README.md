@@ -132,7 +132,7 @@ CEIE comes with pre-configured GitHub Actions workflows for seamless CI/CD integ
 For more information on GitHub Actions, check out the documentation on [GitHub Actions](https://docs.github.com/en/actions).
 
 ---
-## *Docs**
+## **Docs**
 Check out our comprehensive docs at [CEIE Docs](https://ceie-docs.netlify.app)
 ---
 
