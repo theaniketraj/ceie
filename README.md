@@ -14,12 +14,8 @@ Welcome to **CEIE 2.0** – a comprehensive toolchain designed to automate Git r
 6. [Project Structure](#project-structure)
 7. [CI/CD Integration](#cicd-integration)
 8. [Contributing](#contributing)
-<<<<<<< HEAD
 9. [Docs](#docs)
 10. [License](#license)
-=======
-9. [License](#license)
->>>>>>> 91f6239 (Fix README file)
 
 ---
 
@@ -110,7 +106,7 @@ npm install
 
 ## **Project Structure**
 
-```bash
+```pgsql
 CEIE/ 
 ├── src/ # Source code for CEIE tools and functionality 
 ├── workflows/ # GitHub Actions workflows 
@@ -136,12 +132,12 @@ CEIE comes with pre-configured GitHub Actions workflows for seamless CI/CD integ
 For more information on GitHub Actions, check out the documentation on [GitHub Actions](https://docs.github.com/en/actions).
 
 ---
-<<<<<<< HEAD
+
 ## **Docs**
+
 Check out our comprehensive docs at [CEIE Docs](https://ceie-docs.netlify.app)
+
 ---
-=======
->>>>>>> 91f6239 (Fix README file)
 
 ## **Contributing**
 
@@ -164,4 +160,3 @@ CEIE is open-source software licensed under the MIT License. See [LICENSE](https
 ---
 
 We hope CEIE helps streamline your workflow and boosts productivity. Feel free to explore, contribute, and reach out with any questions or suggestions. Happy pipelining. 😉
-
